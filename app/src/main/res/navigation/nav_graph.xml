@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.gandhasiri.app.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.gandhasiri.app.RegisterFragment"
+        android:label="Register Tree"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/navigation_tracker"
+        android:name="com.gandhasiri.app.TrackerFragment"
+        android:label="Growth Tracker"
+        tools:layout="@layout/fragment_tracker" />
+
+    <fragment
+        android:id="@+id/navigation_security"
+        android:name="com.gandhasiri.app.SecurityFragment"
+        android:label="Security"
+        tools:layout="@layout/fragment_security" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.gandhasiri.app.MapFragment"
+        android:label="Tree Map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_tree_detail"
+        android:name="com.gandhasiri.app.TreeDetailFragment"
+        android:label="Tree Details"
+        tools:layout="@layout/fragment_tree_detail">
+        <argument
+            android:name="treeId"
+            app:argType="integer" />
+        <argument
+            android:name="treeUid"
+            app:argType="string" />
+        <argument
+            android:name="photoPath"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="girth"
+            app:argType="float" />
+        <argument
+            android:name="lat"
+            app:argType="float" />
+        <argument
+            android:name="lng"
+            app:argType="float" />
+    </fragment>
+</navigation>

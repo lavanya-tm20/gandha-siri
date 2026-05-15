@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gandha-Siri</string>
+    <string name="title_home">Home</string>
+    <string name="title_register">Register Tree</string>
+    <string name="title_tracker">Growth Tracker</string>
+    <string name="title_security">Security</string>
+    <string name="title_details">Tree Details</string>
+    <string name="title_tree_map">Tree Map &amp; Proximity</string>
+
+    <string name="welcome_message">Welcome to Gandha-Siri</string>
+    <string name="app_description">Your Sandalwood Farmer\'s Guard</string>
+    <string name="namaste_farmer">Namaste, Farmer</string>
+    <string name="guard_active">Gandha-Siri Guard is Active</string>
+
+    <!-- Dashboard -->
+    <string name="natural_wealth_summary">Natural Wealth Summary</string>
+    <string name="wealth_valuation_label">Estimated Natural Wealth</string>
+    <string name="valuation_format">₹ %1$,.2f</string>
+    <string name="default_valuation">₹ 0.00</string>
+    <string name="trees_tagged_format">Based on %1$d tagged Sandalwood trees</string>
+    <string name="harvest_estimate_format">Next Harvest Estimate: %1$s</string>
+    <string name="impact_goals">Impact Goals</string>
+    <string name="goal_digital_ownership">Digital Ownership</string>
+    <string name="goal_anti_smuggling">Anti-Smuggling</string>
+
+    <string name="farm_estate_preview">Farm Estate Preview</string>
+    <string name="view_full_map">VIEW FULL MAP</string>
+    <string name="operation_center">Operation Center</string>
+    <string name="tag_new_tree">Tag New Tree</string>
+    <string name="security_check">Security Check</string>
+    <string name="emergency_alert">Emergency Security Alert</string>
+    <string name="panic_label">PANIC</string>
+    <string name="wealth_growth_analytics">Wealth Growth Analytics</string>
+
+    <string name="wealth_breakdown_title">Natural Wealth Breakdown</string>
+    <string name="wealth_breakdown_format">Asset Breakdown:\n\n• Base Tree Value: ₹ %1$,.2f\n• Growth Progress: ₹ %2$,.2f\n• Heartwood Premium: ₹ %3$,.2f\n\nTotal Valuation: ₹ %4$.2f</string>
+    <string name="no_trees_breakdown">Register trees to see value breakdown</string>
+
+    <string name="register_tree">Register New Tree</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="girth_hint">Girth (cm)</string>
+    <string name="location_label">Location: %1$s</string>
+    <string name="not_captured">Not captured</string>
+    <string name="get_location">Get Location</string>
+    <string name="save_tree">Register Tree</string>
+    <string name="updating_location">Updating location...</string>
+    <string name="refresh_location">Refresh Location</string>
+    <string name="my_location_format">My Location: %1$.4f, %2$.4f</string>
+    <string name="location_failed">Location failed. Check GPS.</string>
+    <string name="nearby_trees_label">Nearby Trees:\n\n</string>
+    <string name="tree_distance_format">• %1$s: %2$.1f m\n</string>
+
+    <string name="label_tree_id">Tree ID: %1$s</string>
+    <string name="label_girth">Girth: %1$.1f cm</string>
+    <string name="label_maturity">Maturity: %1$.0f%% (%2$d years left)</string>
+
+    <string name="maturity_info_format">Current Girth: %1$.1f cm\nMaturity: %2$.1f%%\nEstimated Harvest in: %3$d years\nStatus: %4$s</string>
+    <string name="status_ready">READY</string>
+    <string name="status_growing">GROWING</string>
+
+    <string name="status_sapling_label">STATUS: SAPLING</string>
+    <string name="status_growing_label">STATUS: GROWING</string>
+    <string name="status_ready_label">STATUS: MATURE</string>
+
+    <string name="panic_button">PANIC</string>
+    <string name="security_instruction">Press in case of suspicious activity</string>
+    <string name="alert_sent">EMERGENCY ALERT SENT to neighbors and authorities!</string>
+
+    <string name="btn_security_checklist">Security Checklist</string>
+    <string name="btn_legal_guide">Legal Guide</string>
+    <string name="btn_add_log">Add Growth Entry</string>
+
+    <string name="dialog_update_growth">Update Growth</string>
+    <string name="hint_enter_girth">Enter new girth (cm)</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="cert_official_title">OFFICIAL DIGITAL CERTIFICATE</string>
+    <string name="cert_legal_notice">LEGAL NOTICE: This record serves as proof of cultivation for Forest Department verification under Karnataka Sandalwood Policy 2022.</string>
+
+    <string name="legal_guide_content">Under the revised Karnataka Sandalwood Policy:\n1. Farmers have full ownership of sandalwood trees on their land.\n2. Registration with the Forest Department is required (via Gandha-Siri logs).\n3. Before harvesting, you must inform the Range Forest Officer (RFO).\n4. The department will facilitate the sale through KSDL or open auction.\n5. Transit Pass (TP) is mandatory for moving the logs.</string>
+    <string name="security_checklist_title">Security Infrastructure Audit</string>
+
+    <string name="ai_init_scan">GenAI Vision Engine: Initializing image analysis...</string>
+    <string name="ai_advice_sapling">GenAI Scan Complete: Tree texture indicates healthy growth. Recommendation: Increase nitrogen-rich host plant density. Estimated heartwood formation: 40% in 5 years.</string>
+    <string name="ai_advice_mature">GenAI Scan Complete: Bark density suggests high oil accumulation. Analysis: Prime maturity approaching. Recommendation: Monitor for Srigandha Spike Disease. Soil pH correction suggested.</string>
+    <string name="btn_run_new_scan">Run New Scan</string>
+
+    <string name="change_planting_date">Change Planting Date</string>
+    <string name="date_today">Date: Today</string>
+    <string name="farm_growth_ledger">Farm Growth Ledger</string>
+    <string name="track_biological_progress">Track the biological progress of your Srigandha assets</string>
+</resources>

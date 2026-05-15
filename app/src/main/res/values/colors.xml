@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Professional Sandal/Wood palette -->
+    <color name="sandal_bg">#FDF5E6</color> <!-- Old Lace -->
+    <color name="sandal_light">#F5DEB3</color> <!-- Wheat -->
+    <color name="sandal_medium">#DEB887</color> <!-- BurlyWood -->
+    <color name="sandal_card">#FFF8E1</color>
+
+    <color name="wood_brown">#5D4037</color> <!-- Deep Bark Brown -->
+    <color name="leaf_green">#2E7D32</color> <!-- Forest Green -->
+    <color name="leaf_green_light">#E8F5E9</color>
+
+    <color name="primaryColor">#5D4037</color>
+    <color name="primaryLightColor">#8B6B61</color>
+    <color name="primaryDarkColor">#321911</color>
+    <color name="secondaryColor">#2E7D32</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="gold">#FFD700</color>
+    <color name="panic_red">#C62828</color>
+</resources>

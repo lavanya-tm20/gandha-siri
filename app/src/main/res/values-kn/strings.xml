@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ಗಂಧ-ಸಿರಿ</string>
+    <string name="title_home">ಮುಖಪುಟ</string>
+    <string name="title_register">ಮರವನ್ನು ನೋಂದಾಯಿಸಿ</string>
+    <string name="title_tracker">ಬೆಳವಣಿಗೆಯ ಟ್ರ್ಯಾಕರ್</string>
+    <string name="title_security">ಭದ್ರತೆ</string>
+    <string name="title_details">ಮರದ ವಿವರಗಳು</string>
+    <string name="title_tree_map">ಮರದ ನಕ್ಷೆ ಮತ್ತು ಸಾಮೀಪ್ಯ</string>
+
+    <string name="welcome_message">ಗಂಧ-ಸಿರಿಗೆ ಸುಸ್ವಾಗತ</string>
+    <string name="app_description">ನಿಮ್ಮ ಶ್ರೀಗಂಧದ ರೈತರ ರಕ್ಷಕ</string>
+    <string name="namaste_farmer">ನಮಸ್ತೆ, ರೈತ ಬಂಧುಗಳೇ</string>
+    <string name="guard_active">ಗಂಧ-ಸಿರಿ ರಕ್ಷಣೆ ಸಕ್ರಿಯವಾಗಿದೆ</string>
+
+    <!-- Dashboard -->
+    <string name="natural_wealth_summary">ನೈಸರ್ಗಿಕ ಸಂಪತ್ತಿನ ಸಾರಾಂಶ</string>
+    <string name="wealth_valuation_label">ಅಂದಾಜು ನೈಸರ್ಗಿಕ ಸಂಪತ್ತು</string>
+    <string name="valuation_format">₹ %1$,.2f</string>
+    <string name="trees_tagged_format">%1$d ಟ್ಯಾಗ್ ಮಾಡಲಾದ ಶ್ರೀಗಂಧದ ಮರಗಳ ಆಧಾರದ ಮೇಲೆ</string>
+    <string name="harvest_estimate_format">ಮುಂದಿನ ಕೊಯ್ಲು ಅಂದಾಜು: %1$s</string>
+    <string name="impact_goals">ಪರಿಣಾಮದ ಗುರಿಗಳು</string>
+    <string name="goal_digital_ownership">ಡಿಜಿಟಲ್ ಮಾಲೀಕತ್ವ</string>
+    <string name="goal_anti_smuggling">ದಳ್ಳಾಳಿ ತಡೆ</string>
+
+    <string name="farm_estate_preview">ಫಾರ್ಮ್ ಎಸ್ಟೇಟ್ ಮುನ್ನೋಟ</string>
+    <string name="view_full_map">ಪೂರ್ಣ ನಕ್ಷೆಯನ್ನು ನೋಡಿ</string>
+    <string name="operation_center">ಕಾರ್ಯಾಚರಣೆ ಕೇಂದ್ರ</string>
+    <string name="tag_new_tree">ಮರ ಟ್ಯಾಗ್ ಮಾಡಿ</string>
+    <string name="security_check">ಭದ್ರತಾ ತಪಾಸಣೆ</string>
+    <string name="emergency_alert">ತುರ್ತು ಭದ್ರತಾ ಎಚ್ಚರಿಕೆ</string>
+    <string name="panic_label">ಪ್ಯಾನಿಕ್</string>
+    <string name="wealth_growth_analytics">ಸಂಪತ್ತಿನ ಬೆಳವಣಿಗೆಯ ವಿಶ್ಲೇಷಣೆ</string>
+
+    <string name="wealth_breakdown_title">ನೈಸರ್ಗಿಕ ಸಂಪತ್ತಿನ ವಿಭಜನೆ</string>
+    <string name="wealth_breakdown_format">ಆಸ್ತಿ ವಿವರ:\n\n• ಮೂಲ ಮರದ ಮೌಲ್ಯ: ₹ %1$,.2f\n• ಬೆಳವಣಿಗೆಯ ಪ್ರಗತಿ: ₹ %2$,.2f\n• ಹಾರ್ಟ್‌ವುಡ್ ಪ್ರೀಮಿಯಂ: ₹ %3$,.2f\n\nಒಟ್ಟು ಮೌಲ್ಯಮಾಪನ: ₹ %4$,.2f</string>
+    <string name="no_trees_breakdown">ಮೌಲ್ಯದ ವಿವರಗಳನ್ನು ನೋಡಲು ಮರಗಳನ್ನು ನೋಂದಾಯಿಸಿ</string>
+
+    <string name="register_tree">ಹೊಸ ಮರವನ್ನು ನೋಂದಾಯಿಸಿ</string>
+    <string name="take_photo">ಫೋಟೋ ತೆಗೆದುಕೊಳ್ಳಿ</string>
+    <string name="girth_hint">ಸುತ್ತಳತೆ (ಸೆಂ.ಮೀ)</string>
+    <string name="location_label">ಸ್ಥಳ: %1$s</string>
+    <string name="not_captured">ಸೆರೆಹಿಡಿಯಲಾಗಿಲ್ಲ</string>
+    <string name="get_location">ಸ್ಥಳವನ್ನು ಪಡೆಯಿರಿ</string>
+    <string name="save_tree">ಮರವನ್ನು ನೋಂದಾಯಿಸಿ</string>
+    <string name="updating_location">ಸ್ಥಳವನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತಿದೆ...</string>
+    <string name="refresh_location">ಸ್ಥಳವನ್ನು ನವೀಕರಿಸಿ</string>
+    <string name="my_location_format">ನನ್ನ ಸ್ಥಳ: %1$.4f, %2$.4f</string>
+    <string name="location_failed">ಸ್ಥಳ ಪತ್ತೆ ವಿಫಲವಾಗಿದೆ. GPS ಪರಿಶೀಲಿಸಿ.</string>
+    <string name="nearby_trees_label">ಹತ್ತಿರದ ಮರಗಳು:\n\n</string>
+    <string name="tree_distance_format">• %1$s: %2$.1f ಮೀ\n</string>
+
+    <string name="label_tree_id">ಮರದ ಐಡಿ: %1$s</string>
+    <string name="label_girth">ಸುತ್ತಳತೆ: %1$.1f ಸೆಂ.ಮೀ</string>
+    <string name="label_maturity">ಪಕ್ವತೆ: %1$.0f%% (%2$d ವರ್ಷಗಳು ಬಾಕಿ)</string>
+
+    <string name="maturity_info_format">ಪ್ರಸ್ತುತ ಸುತ್ತಳತೆ: %1$.1f cm\nಪಕ್ವತೆ: %2$.1f%%\nಅಂದಾಜು ಕೊಯ್ಲು ಸಮಯ: %3$d ವರ್ಷಗಳು\nಸ್ಥಿತಿ: %4$s</string>
+    <string name="status_ready">ಸಿದ್ಧವಾಗಿದೆ</string>
+    <string name="status_growing">ಬೆಳೆಯುತ್ತಿದೆ</string>
+
+    <string name="status_sapling_label">ಸ್ಥಿತಿ: ಸಸಿ</string>
+    <string name="status_growing_label">ಸ್ಥಿತಿ: ಬೆಳೆಯುತ್ತಿದೆ</string>
+    <string name="status_ready_label">ಸ್ಥಿತಿ: ಪಕ್ವವಾಗಿದೆ</string>
+
+    <string name="panic_button">ಪ್ಯಾನಿಕ್</string>
+    <string name="security_instruction">ಅನುಮಾನಾಸ್ಪದ ಚಟುವಟಿಕೆಯ ಸಂದರ್ಭದಲ್ಲಿ ಒತ್ತಿರಿ</string>
+    <string name="alert_sent">ತುರ್ತು ಎಚ್ಚರಿಕೆಯನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ!</string>
+
+    <string name="btn_security_checklist">ಭದ್ರತಾ ಪರಿಶೀಲನಾಪಟ್ಟಿ</string>
+    <string name="btn_legal_guide">ಕಾನೂನು ಮಾರ್ಗದರ್ಶಿ</string>
+    <string name="btn_add_log">ಬೆಳವಣಿಗೆಯ ವಿವರ ಸೇರಿಸಿ</string>
+
+    <string name="dialog_update_growth">ಬೆಳವಣಿಗೆ ನವೀಕರಿಸಿ</string>
+    <string name="hint_enter_girth">ಹೊಸ ಸುತ್ತಳತೆಯನ್ನು ನಮೂದಿಸಿ (cm)</string>
+    <string name="btn_save">ಉಳಿಸಿ</string>
+    <string name="btn_cancel">ರದ್ದುಮಾಡಿ</string>
+
+    <string name="cert_official_title">ಅಧಿಕೃತ ಡಿಜಿಟಲ್ ಪ್ರಮಾಣಪತ್ರ</string>
+    <string name="cert_legal_notice">ಕಾನೂನು ಸೂಚನೆ: ಈ ದಾಖಲೆಯು ಕರ್ನಾಟಕ ಶ್ರೀಗಂಧದ ನೀತಿ 2022 ರ ಅಡಿಯಲ್ಲಿ ಅರಣ್ಯ ಇಲಾಖೆಯ ಪರಿಶೀಲನೆಗೆ ಕೃಷಿಯ ಪುರಾವೆಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</string>
+
+    <string name="legal_guide_content">ಪರಿಷ್ಕೃತ ಕರ್ನಾಟಕ ಶ್ರೀಗಂಧದ ನೀತಿಯಡಿ:\n1. ರೈತರು ತಮ್ಮ ಭೂಮಿಯಲ್ಲಿರುವ ಶ್ರೀಗಂಧದ ಮರಗಳ ಪೂರ್ಣ ಮಾಲೀಕತ್ವವನ್ನು ಹೊಂದಿರುತ್ತಾರೆ.\n2. ಅರಣ್ಯ ಇಲಾಖೆಯಲ್ಲಿ ನೋಂದಣಿ ಅಗತ್ಯವಿದೆ (ಗಂಧ-ಸಿರಿ ಮೂಲಕ).\n3. ಕೊಯ್ಲಿಗೆ ಮೊದಲು ವಲಯ ಅರಣ್ಯಾಧಿಕಾರಿಗಳಿಗೆ (RFO) ತಿಳಿಸಬೇಕು.\n4. ಇಲಾಖೆಯು KSDL ಅಥವಾ ಮುಕ್ತ ಹರಾಜಿನ ಮೂಲಕ ಮಾರಾಟಕ್ಕೆ ಅನುಕೂಲ ಮಾಡಿಕೊಡುತ್ತದೆ.\n5. ಮರಗಳನ್ನು ಸಾಗಿಸಲು ಸಾಗಣೆ ಪರವಾನಗಿ (TP) ಕಡ್ಡಾಯವಾಗಿದೆ.</string>
+    <string name="security_checklist_title">ಭದ್ರತಾ ಮೂಲಸೌಕರ್ಯ ಆಡಿಟ್</string>
+
+    <string name="ai_init_scan">GenAI ವಿಷನ್ ಇಂಜಿನ್: ಚಿತ್ರ ವಿಶ್ಲೇಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ...</string>
+    <string name="ai_advice_sapling">GenAI ಸ್ಕ್ಯಾನ್ ಪೂರ್ಣಗೊಂಡಿದೆ: ಮರದ ವಿನ್ಯಾಸವು ಆರೋಗ್ಯಕರ ಬೆಳವಣಿಗೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಶಿಫಾರಸು: ಸಾರಜನಕ-ಭರಿತ ಅತಿಥೇಯ ಸಸ್ಯಗಳ ಸಾಂದ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ. ಅಂದಾಜು ಹಾರ್ಟ್‌ವುಡ್ ರಚನೆ: 5 ವರ್ಷಗಳಲ್ಲಿ 40%.</string>
+    <string name="ai_advice_mature">GenAI ಸ್ಕ್ಯಾನ್ ಪೂರ್ಣಗೊಂಡಿದೆ: ತೊಗಟೆಯ ಸಾಂದ್ರತೆಯು ಹೆಚ್ಚಿನ ತೈಲ ಶೇಖರಣೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ವಿಶ್ಲೇಷಣೆ: ಪ್ರಧಾನ ಪಕ್ವತೆಯು ಸಮೀಪಿಸುತ್ತಿದೆ. ಶಿಫಾರಸು: ಶ್ರೀಗಂಧದ ಸ್ಪೈಕ್ ಕಾಯಿಲೆಯನ್ನು ಗಮನಿಸಿ. ಮಣ್ಣಿನ pH ತಿದ್ದುಪಡಿಯನ್ನು ಸೂಚಿಸಲಾಗಿದೆ.</string>
+    <string name="btn_run_new_scan">ಹೊಸ ಸ್ಕ್ಯಾನ್ ರನ್ ಮಾಡಿ</string>
+</resources>
