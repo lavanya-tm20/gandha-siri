@@ -58,4 +58,4 @@ Sandalwood is a part of our heritage, but farmers often fear theft and are confu
 * **Safe Investment:** Helping farmers treat trees as high-value, long-term financial assets.
 
 ---
-*Created for the MindMatrix VTU Internship Program.*
+
