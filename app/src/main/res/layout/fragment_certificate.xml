@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/certificate_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/cert_border_background"
+        android:layout_margin="16dp">
+
+        <!-- Header -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_security"
+            app:tint="@color/wood_brown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cert_official_title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/wood_brown"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SRIGANDHA CULTIVATION RECORD"
+            android:textSize="12sp"
+            android:textColor="@color/leaf_green"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/wood_brown"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Tree Info -->
+        <TextView
+            android:id="@+id/tv_cert_tree_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tree ID: SAN-8829-X"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/wood_brown" />
+
+        <TextView
+            android:id="@+id/tv_cert_girth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registered Girth: 42.5 cm"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_cert_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS Coordinates: 13.9299, 75.5681"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_cert_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration Date: 25 Oct 2023"
+            android:layout_marginTop="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Legal Notice -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cert_legal_notice"
+            android:textSize="11sp"
+            android:textColor="#555555"
+            android:lineSpacingExtra="4dp"
+            android:fontFamily="serif" />
+
+        <!-- Signatures -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="48dp"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <View android:layout_width="100dp" android:layout_height="1dp" android:background="#000000" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Farmer Sign" android:textSize="10sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_logo_placeholder"
+                android:alpha="0.2" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <View android:layout_width="100dp" android:layout_height="1dp" android:background="#000000" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gandha-Siri Verified" android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_share_cert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHARE / PRINT CERTIFICATE"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/wood_brown" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
