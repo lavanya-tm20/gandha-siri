@@ -33,12 +33,12 @@ class CertificateFragment : Fragment() {
             val lng = it.getFloat("lng")
             val dateMillis = it.getLong("datePlanted")
 
-            binding.tvCertTreeId.text = "Tree ID: $treeId"
-            binding.tvCertGirth.text = "Registered Girth: $girth cm"
-            binding.tvCertLocation.text = String.format(Locale.getDefault(), "GPS Coordinates: %.4f, %.4f", lat, lng)
+            binding.tvCertTreeId.text = getString(R.string.cert_id_format, treeId)
+            binding.tvCertGirth.text = getString(R.string.cert_girth_format, girth)
+            binding.tvCertLocation.text = getString(R.string.cert_location_format, lat, lng)
             
             val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-            binding.tvCertDate.text = "Registration Date: ${sdf.format(Date(dateMillis))}"
+            binding.tvCertDate.text = getString(R.string.cert_date_format, sdf.format(Date(dateMillis)))
         }
 
         binding.btnShareCert.setOnClickListener {

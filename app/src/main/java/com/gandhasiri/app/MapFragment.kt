@@ -69,7 +69,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mapFragment?.getMapAsync(this)
 
         treeViewModel = ViewModelProvider(this).get(TreeViewModel::class.java)
-        treeViewModel.getAllTrees().observe(viewLifecycleOwner) { trees ->
+        treeViewModel.allTrees.observe(viewLifecycleOwner) { trees: List<Tree>? ->
             if (trees != null) {
                 registeredTrees = trees
                 if (trees.isEmpty()) {

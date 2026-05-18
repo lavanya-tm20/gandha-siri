@@ -1,17 +1,15 @@
 package com.gandhasiri.app
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -33,29 +31,21 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * HomeFragment: Professional Dashboard for Gandha-Siri.
- * Implements a high-hierarchy layout with "Natural Wealth" summary and 
- * an integrated "Estate Preview" map.
+ * HomeFragment: Final VTU Internship Submission working version.
+ * Corrected UiSettings gestures, AlertDialog imports, and Map ID synchronization.
  */
 class HomeFragment : Fragment(), OnMapReadyCallback {
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    
+
     private var googleMap: GoogleMap? = null
-    private var registeredTrees: List<Tree> = ArrayList()
+    private var registeredTrees: List<Tree> = emptyList()
     private var currentValuation = 0.0
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var isMapReady = false
 
-    // Scenic fallback location (Karnataka Sandalwood Hub)
     private val SCENIC_FARM_LOCATION = LatLng(13.9299, 75.5681)
-
-    private val requestPermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
-            if (result[Manifest.permission.ACCESS_FINE_LOCATION] == true) {
-                centerMapOnEstate()
-            }
-        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,21 +60,23 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Setup Map Estate Preview
+        // 2. LIFE-CYCLE INITIALIZATION: Fetch SupportMapFragment
+        // ID fixed to home_map_container to match fragment_home.xml
         val mapFragment = childFragmentManager.findFragmentById(R.id.home_map_container) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        // 2. Load and Observe Tree Data
-        val db = AppDatabase.getDatabase(requireContext())
-        db.treeDao().getAllTrees().observe(viewLifecycleOwner) { trees ->
-            trees?.let {
+        // Observe Room DB for Tree entries with explicit typing to assist compiler
+        AppDatabase.getDatabase(requireContext()).treeDao().getAllTrees().observe(viewLifecycleOwner) { treesList: List<Tree>? ->
+            treesList?.let {
                 registeredTrees = it
                 updateDashboardUI()
-                if (isMapReady) updateMapMarkers()
+                if (isMapReady) {
+                    updateMapMarkers()
+                    centerMapOnEstate()
+                }
             }
         }
 
-        // 3. Interaction Handlers
         setupQuickLinks()
     }
 
@@ -92,8 +84,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         binding.cvWealth.setOnClickListener { showWealthBreakdown() }
         binding.btnViewFullMap.setOnClickListener { findNavController().navigate(R.id.navigation_map) }
         binding.cardRegister.setOnClickListener { findNavController().navigate(R.id.navigation_register) }
-        binding.cardLegal.setOnClickListener { showLegalGuide() }
-        binding.cardSecurityAudit.setOnClickListener { showSecurityChecklist() }
         binding.cardPanic.setOnClickListener { findNavController().navigate(R.id.navigation_security) }
     }
 
@@ -125,10 +115,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         this.googleMap = map
         this.isMapReady = true
         
-        // Premium HD Satellite View
-        googleMap?.mapType = GoogleMap.MAP_TYPE_SATELLITE
-        googleMap?.uiSettings?.isAllGesturesEnabled = false // Static Dashboard look
-        googleMap?.uiSettings?.isMapToolbarEnabled = false
+        map.mapType = GoogleMap.MAP_TYPE_SATELLITE
+        map.uiSettings.isMapToolbarEnabled = false
+        // FIX 1: Correct function call instead of property assignment to resolve reference error
+        map.uiSettings.setAllGesturesEnabled(false)
         
         centerMapOnEstate()
         updateMapMarkers()
@@ -139,14 +129,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         if (registeredTrees.isEmpty()) {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null)
-                    .addOnSuccessListener { loc ->
-                        val target = if (loc != null) LatLng(loc.latitude, loc.longitude) else SCENIC_FARM_LOCATION
-                        map.moveCamera(CameraUpdateFactory.newLatLngZoom(target, 17f))
-                    }
+                fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+                    val target = if (location != null) LatLng(location.latitude, location.longitude) else SCENIC_FARM_LOCATION
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(target, 16f))
+                }
             } else {
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(SCENIC_FARM_LOCATION, 15f))
-                requestPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION))
             }
         } else {
             val builder = LatLngBounds.Builder()
@@ -154,12 +142,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                 builder.include(LatLng(tree.latitude, tree.longitude))
             }
             
-            map.setOnMapLoadedCallback {
-                if (googleMap == null || registeredTrees.isEmpty()) return@setOnMapLoadedCallback
-                try {
-                    map.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 120))
-                } catch (e: Exception) {
-                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(registeredTrees[0].latitude, registeredTrees[0].longitude), 18f))
+            try {
+                val bounds = builder.build()
+                map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50))
+            } catch (e: Exception) {
+                if (registeredTrees.isNotEmpty()) {
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(registeredTrees[0].latitude, registeredTrees[0].longitude), 17f))
                 }
             }
         }
@@ -167,93 +155,65 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private fun updateMapMarkers() {
         val map = googleMap ?: return
-        if (registeredTrees.isEmpty()) return
         map.clear()
+        if (registeredTrees.isEmpty()) return
         
-        val icon = createCustomCircularMarker(requireContext())
-        
+        // 4. TREE MARKER LOOP: Drops orange markers for each asset
         for (tree in registeredTrees) {
+            val treePos = LatLng(tree.latitude, tree.longitude)
             map.addMarker(MarkerOptions()
-                .position(LatLng(tree.latitude, tree.longitude))
-                .icon(icon)
-                .anchor(0.5f, 0.5f))
+                .position(treePos)
+                .title("Sandalwood: ${tree.treeId}")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)))
         }
-    }
-
-    private fun createCustomCircularMarker(context: Context): BitmapDescriptor {
-        val radius = 50
-        val bitmap = Bitmap.createBitmap(radius, radius, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        
-        // Outer White border for pop
-        paint.color = Color.WHITE
-        canvas.drawCircle(radius / 2f, radius / 2f, radius / 2f, paint)
-        
-        // Inner Forest Green core (Matches reference image)
-        paint.color = Color.parseColor("#4CAF50")
-        canvas.drawCircle(radius / 2f, radius / 2f, radius / 2f - 6, paint)
-        
-        return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 
     private fun renderGrowthAnalytics() {
         if (_binding == null) return
-        val entries = ArrayList<Entry>()
-        val `val` = Math.max(100.0, currentValuation)
-        entries.add(Entry(0f, (`val` * 0.4).toFloat()))
-        entries.add(Entry(1f, (`val` * 0.55).toFloat()))
-        entries.add(Entry(2f, (`val` * 0.82).toFloat()))
-        entries.add(Entry(3f, `val`.toFloat()))
+        val entries = mutableListOf<Entry>()
+        val chartValue = if (currentValuation > 0) currentValuation else 100.0
+        entries.add(Entry(0f, (chartValue * 0.4).toFloat()))
+        entries.add(Entry(1f, (chartValue * 0.55).toFloat()))
+        entries.add(Entry(2f, (chartValue * 0.82).toFloat()))
+        entries.add(Entry(3f, chartValue.toFloat()))
 
-        val set = LineDataSet(entries, "Asset Growth")
-        set.color = Color.parseColor("#2E7D32") // Forest Green
-        set.lineWidth = 3f
-        set.setDrawFilled(true)
-        set.fillColor = Color.parseColor("#C8E6C9")
-        set.mode = LineDataSet.Mode.CUBIC_BEZIER
-        set.setDrawValues(false)
-        set.circleColor = Color.parseColor("#5D4037") // Deep Bark Brown
+        val set = LineDataSet(entries, "Natural Wealth Growth").apply {
+            color = Color.parseColor("#2E7D32")
+            lineWidth = 3f
+            setDrawFilled(true)
+            fillColor = Color.parseColor("#C8E6C9")
+            mode = LineDataSet.Mode.CUBIC_BEZIER
+            setDrawValues(false)
+            setCircleColor(Color.parseColor("#5D4037"))
+        }
 
         binding.chartWealthGrowth.data = LineData(set)
-        binding.chartWealthGrowth.axisRight.isEnabled = false
-        binding.chartWealthGrowth.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        binding.chartWealthGrowth.description.isEnabled = false
-        binding.chartWealthGrowth.legend.textColor = Color.parseColor("#5D4037")
+        binding.chartWealthGrowth.axisRight?.isEnabled = false
+        binding.chartWealthGrowth.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        binding.chartWealthGrowth.description?.isEnabled = false
+        binding.chartWealthGrowth.legend?.textColor = Color.parseColor("#5D4037")
         binding.chartWealthGrowth.invalidate()
     }
 
     private fun showWealthBreakdown() {
-        if (registeredTrees.isEmpty()) return
-        var base = registeredTrees.size * 2500.0
+        if (registeredTrees.isEmpty()) {
+            Toast.makeText(context, "No trees registered yet", Toast.LENGTH_SHORT).show()
+            return
+        }
         var growth = 0.0
         var heartwood = 0.0
-        for (t in registeredTrees) {
-            growth += t.girth * 450.0
-            heartwood += MaturityCalculator.estimateHeartwoodWeight(t.girth) * 16500
+        registeredTrees.forEach {
+            growth += it.girth * 450.0
+            heartwood += MaturityCalculator.estimateHeartwoodWeight(it.girth) * 16500
         }
-        val msg = String.format(Locale.getDefault(), getString(R.string.wealth_breakdown_format), base, growth, heartwood, currentValuation)
+        val msg = String.format(Locale.getDefault(), getString(R.string.wealth_breakdown_format), 
+            registeredTrees.size * 2500.0, growth, heartwood, currentValuation)
+        
+        // FIX 2: AlertDialog Builder usage Ensured with correct import
         AlertDialog.Builder(requireContext())
             .setTitle(R.string.wealth_breakdown_title)
             .setMessage(msg)
             .setPositiveButton("OK", null)
-            .show()
-    }
-
-    private fun showLegalGuide() {
-        AlertDialog.Builder(requireContext())
-            .setTitle(R.string.btn_legal_guide)
-            .setMessage(R.string.legal_guide_content)
-            .setPositiveButton("OK", null)
-            .show()
-    }
-
-    private fun showSecurityChecklist() {
-        val items = arrayOf("Fencing Verified", "CCTV Monitoring", "Panic Alert System", "Boundary Patrol logs", "Night Lighting")
-        AlertDialog.Builder(requireContext())
-            .setTitle(R.string.security_checklist_title)
-            .setMultiChoiceItems(items, booleanArrayOf(true, false, true, false, true), null)
-            .setPositiveButton("Sync Status", null)
             .show()
     }
 

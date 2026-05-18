@@ -62,6 +62,7 @@ class TreeDetailFragment : Fragment() {
             binding.btnViewMap.setOnClickListener { openInMaps() }
             binding.btnAskAi.setOnClickListener { runAiVisionScan() }
             binding.btnDeleteTree.setOnClickListener { confirmDelete() }
+            binding.btnGenerateCert.setOnClickListener { navigateToCertificate() }
         }
 
         binding.btnAddLog.setOnClickListener { showAddLogDialog() }
@@ -93,6 +94,12 @@ class TreeDetailFragment : Fragment() {
                 binding.tvMaturityStatusLabel.setTextColor(Color.parseColor("#D32F2F"))
             }
         }
+
+        val yearsLeft = MaturityCalculator.estimateYearsToHarvest(tree.girth, tree.datePlanted)
+        binding.tvHarvestCountdown.text = getString(R.string.harvest_countdown_format, yearsLeft)
+        
+        val heartwood = MaturityCalculator.estimateHeartwoodWeight(tree.girth)
+        binding.tvHeartwoodEstimate.text = getString(R.string.heartwood_estimate_format, heartwood)
     }
 
     private fun updateGrowthChart(logs: List<GrowthLog>?) {
@@ -184,6 +191,18 @@ class TreeDetailFragment : Fragment() {
             }
             .setNegativeButton(R.string.btn_cancel, null)
             .show()
+    }
+
+    private fun navigateToCertificate() {
+        val tree = currentTree ?: return
+        val bundle = Bundle().apply {
+            putString("treeUid", tree.treeId)
+            putFloat("girth", tree.girth.toFloat())
+            putFloat("lat", tree.latitude.toFloat())
+            putFloat("lng", tree.longitude.toFloat())
+            putLong("datePlanted", tree.datePlanted)
+        }
+        findNavController().navigate(R.id.navigation_certificate, bundle)
     }
 
     private fun confirmDelete() {

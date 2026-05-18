@@ -200,6 +200,25 @@
                             android:textColor="@color/leaf_green" />
                     </LinearLayout>
                 </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_harvest_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/harvest_countdown_format"
+                    android:textColor="@color/wood_brown"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_heartwood_estimate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/heartwood_estimate_format"
+                    android:textColor="@color/leaf_green"
+                    android:textSize="12sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -219,6 +238,16 @@
             android:layout_marginTop="8dp"
             android:text="Add New Girth Entry"
             app:icon="@drawable/ic_add" />
+
+        <Button
+            android:id="@+id/btn_generate_cert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_official_certificate"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:backgroundTint="@color/wood_brown"
+            app:icon="@android:drawable/ic_menu_agenda" />
 
         <View
             android:layout_width="match_parent"

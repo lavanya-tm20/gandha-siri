@@ -47,6 +47,9 @@ class SecurityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         createNotificationChannel()
         binding.btnPanic.setOnClickListener { checkPermissionsAndTrigger() }
+        binding.btnCallForestDept.setOnClickListener {
+            Toast.makeText(context, "Dialing Forest Dept Helplines...", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun checkPermissionsAndTrigger() {

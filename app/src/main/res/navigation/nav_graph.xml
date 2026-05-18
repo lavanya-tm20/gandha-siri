@@ -60,4 +60,26 @@
             android:name="lng"
             app:argType="float" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_certificate"
+        android:name="com.gandhasiri.app.CertificateFragment"
+        android:label="Official Certificate"
+        tools:layout="@layout/fragment_certificate">
+        <argument
+            android:name="treeUid"
+            app:argType="string" />
+        <argument
+            android:name="girth"
+            app:argType="float" />
+        <argument
+            android:name="lat"
+            app:argType="float" />
+        <argument
+            android:name="lng"
+            app:argType="float" />
+        <argument
+            android:name="datePlanted"
+            app:argType="long" />
+    </fragment>
 </navigation>

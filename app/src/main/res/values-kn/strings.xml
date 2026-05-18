@@ -81,8 +81,26 @@
     <string name="legal_guide_content">ಪರಿಷ್ಕೃತ ಕರ್ನಾಟಕ ಶ್ರೀಗಂಧದ ನೀತಿಯಡಿ:\n1. ರೈತರು ತಮ್ಮ ಭೂಮಿಯಲ್ಲಿರುವ ಶ್ರೀಗಂಧದ ಮರಗಳ ಪೂರ್ಣ ಮಾಲೀಕತ್ವವನ್ನು ಹೊಂದಿರುತ್ತಾರೆ.\n2. ಅರಣ್ಯ ಇಲಾಖೆಯಲ್ಲಿ ನೋಂದಣಿ ಅಗತ್ಯವಿದೆ (ಗಂಧ-ಸಿರಿ ಮೂಲಕ).\n3. ಕೊಯ್ಲಿಗೆ ಮೊದಲು ವಲಯ ಅರಣ್ಯಾಧಿಕಾರಿಗಳಿಗೆ (RFO) ತಿಳಿಸಬೇಕು.\n4. ಇಲಾಖೆಯು KSDL ಅಥವಾ ಮುಕ್ತ ಹರಾಜಿನ ಮೂಲಕ ಮಾರಾಟಕ್ಕೆ ಅನುಕೂಲ ಮಾಡಿಕೊಡುತ್ತದೆ.\n5. ಮರಗಳನ್ನು ಸಾಗಿಸಲು ಸಾಗಣೆ ಪರವಾನಗಿ (TP) ಕಡ್ಡಾಯವಾಗಿದೆ.</string>
     <string name="security_checklist_title">ಭದ್ರತಾ ಮೂಲಸೌಕರ್ಯ ಆಡಿಟ್</string>
 
+    <string name="check_fencing">ಗಡಿ ಬೇಲಿ ಅಳವಡಿಸಲಾಗಿದೆ</string>
+    <string name="check_lighting">ರಾತ್ರಿ ದೀಪ ವ್ಯವಸ್ಥೆ ಸಕ್ರಿಯವಾಗಿದೆ</string>
+    <string name="check_sensors">ಚಲನೆಯ ಸಂವೇದಕಗಳು ಮಾಪನಾಂಕ ನಿರ್ಣಯಿಸಲಾಗಿದೆ</string>
+    <string name="check_tags">ಡಿಜಿಟಲ್ ಟ್ಯಾಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿದೆ</string>
+    <string name="legal_harvest_guide">ಕಾನೂನುಬದ್ಧ ಕೊಯ್ಲು ಮಾರ್ಗದರ್ಶಿ</string>
+    <string name="contact_forest_dept">ಅರಣ್ಯ ಇಲಾಖೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ</string>
+
+    <string name="harvest_countdown_format">ಅಂದಾಜು %1$d ವರ್ಷಗಳಲ್ಲಿ ಕೊಯ್ಲು</string>
+    <string name="heartwood_estimate_format">ಅಂದಾಜು ಹಾರ್ಟ್‌ವುಡ್: %1$.2f ಕೆಜಿ</string>
+
     <string name="ai_init_scan">GenAI ವಿಷನ್ ಇಂಜಿನ್: ಚಿತ್ರ ವಿಶ್ಲೇಷಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ...</string>
     <string name="ai_advice_sapling">GenAI ಸ್ಕ್ಯಾನ್ ಪೂರ್ಣಗೊಂಡಿದೆ: ಮರದ ವಿನ್ಯಾಸವು ಆರೋಗ್ಯಕರ ಬೆಳವಣಿಗೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಶಿಫಾರಸು: ಸಾರಜನಕ-ಭರಿತ ಅತಿಥೇಯ ಸಸ್ಯಗಳ ಸಾಂದ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ. ಅಂದಾಜು ಹಾರ್ಟ್‌ವುಡ್ ರಚನೆ: 5 ವರ್ಷಗಳಲ್ಲಿ 40%.</string>
     <string name="ai_advice_mature">GenAI ಸ್ಕ್ಯಾನ್ ಪೂರ್ಣಗೊಂಡಿದೆ: ತೊಗಟೆಯ ಸಾಂದ್ರತೆಯು ಹೆಚ್ಚಿನ ತೈಲ ಶೇಖರಣೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ವಿಶ್ಲೇಷಣೆ: ಪ್ರಧಾನ ಪಕ್ವತೆಯು ಸಮೀಪಿಸುತ್ತಿದೆ. ಶಿಫಾರಸು: ಶ್ರೀಗಂಧದ ಸ್ಪೈಕ್ ಕಾಯಿಲೆಯನ್ನು ಗಮನಿಸಿ. ಮಣ್ಣಿನ pH ತಿದ್ದುಪಡಿಯನ್ನು ಸೂಚಿಸಲಾಗಿದೆ.</string>
     <string name="btn_run_new_scan">ಹೊಸ ಸ್ಕ್ಯಾನ್ ರನ್ ಮಾಡಿ</string>
+
+    <string name="btn_official_certificate">ಅಧಿಕೃತ ಮಾಲೀಕತ್ವದ ಪ್ರಮಾಣಪತ್ರ</string>
+    <string name="cert_id_format">ಮರದ ಐಡಿ: %1$s</string>
+    <string name="cert_girth_format">ನೋಂದಾಯಿತ ಸುತ್ತಳತೆ: %1$.1f ಸೆಂ.ಮೀ</string>
+    <string name="cert_location_format">GPS ನಿರ್ದೇಶಾಂಕಗಳು: %1$.4f, %2$.4f</string>
+    <string name="cert_date_format">ನೋಂದಣಿ ದಿನಾಂಕ: %1$s</string>
+    <string name="share_print_cert">ಪ್ರಮಾಣಪತ್ರವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ / ಮುದ್ರಿಸಿ</string>
+    <string name="srigandha_cultivation_record">ಶ್ರೀಗಂಧದ ಕೃಷಿ ದಾಖಲೆ</string>
 </resources>

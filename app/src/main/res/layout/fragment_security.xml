@@ -129,9 +129,111 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Security Checklist Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="start"
+            android:text="@string/security_checklist_title"
+            android:textStyle="bold"
+            android:textColor="@color/wood_brown"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_fencing"
+                    android:textColor="@color/wood_brown"
+                    android:buttonTint="@color/leaf_green" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_lighting"
+                    android:textColor="@color/wood_brown"
+                    android:buttonTint="@color/leaf_green" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_sensors"
+                    android:textColor="@color/wood_brown"
+                    android:buttonTint="@color/leaf_green" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_tags"
+                    android:textColor="@color/wood_brown"
+                    android:buttonTint="@color/leaf_green" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Legal Guide Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="start"
+            android:text="@string/legal_harvest_guide"
+            android:textStyle="bold"
+            android:textColor="@color/wood_brown"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/sandal_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/legal_guide_content"
+                    android:textColor="@color/wood_brown"
+                    android:lineSpacingExtra="4dp"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_call_forest_dept"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/contact_forest_dept"
+                    android:textColor="@color/leaf_green"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="60dp" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

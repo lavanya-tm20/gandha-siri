@@ -14,7 +14,7 @@ interface TreeDao {
     @Delete
     fun delete(tree: Tree)
 
-    @Query("SELECT * FROM trees ORDER BY datePlanted DESC")
+    @Query("SELECT * FROM trees")
     fun getAllTrees(): LiveData<List<Tree>>
 
     @Query("SELECT * FROM trees WHERE id = :id")
